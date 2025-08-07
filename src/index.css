@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "@radix-ui/themes/styles.css";
+
+
+html,
+body{
+  height: 100%;
+  width: 100vw;
+  box-sizing: border-box;
+}
