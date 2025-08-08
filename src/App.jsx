@@ -9,14 +9,23 @@ import { FiMousePointer } from "react-icons/fi";
 import { Button } from "./components/button";
 import CardOne from "./components/card-one";
 import CardTwo from "./components/card-two";
+import CardThree from "./components/card-three";
+import CardFour from "./components/card-four";
+import TravelEventCard from "./components/card-five";
+import CardFive from "./components/card-five";
+import TiltEventCard from "./components/tilt-card";
 
 const Example = () => {
   return (
     <div className="grid w-full h-screen place-content-center bg-gradient-to-br from-indigo-500 to-violet-500 px-4 py-12 text-slate-900">
-      {/* <CardOne/> */}
-      <CardTwo/>
-    </div>
-  );
+      <CardOne/>
+      {/* <CardTwo/> */}
+      {/* <CardThree/> */}
+      {/* <CardFour/> */}
+      {/* <CardFive/> */}
+      {/* <TiltEventCard/> */}
+  </div>
+);
 };
 
 const ROTATION_RANGE = 32.5;

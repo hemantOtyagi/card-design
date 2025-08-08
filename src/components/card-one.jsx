@@ -47,7 +47,7 @@ const CardOne = () => {
       >
         <HeartIcon
           fill={liked ? "red" : "none"}
-          stroke={liked ? "red" : "currentColor"}
+          stroke={liked ? "red" : "gray"}
           size={"28px"}
         />
       </motion.div>

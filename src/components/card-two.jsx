@@ -7,7 +7,7 @@ const CardTwo = () => {
 
   return (
     <motion.div
-      className="min-w-sm h-fit rounded-2xl overflow-hidden shadow-sm bg-white"
+      className="min-w-sm h-fit w-fit rounded-2xl overflow-hidden shadow-sm bg-white"
       whileHover={{ y: -4 }}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
