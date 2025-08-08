@@ -5,9 +5,8 @@ import { motion, useMotionValue, useSpring, useMotionTemplate } from "framer-mot
 import { MapPin, Clock, Star } from "lucide-react";
 
 const ROTATION_RANGE = 20;
-const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
-export default function TiltEventCard() {
+ function TiltEventCard({ number, title, location, duration, rating, price, image }) {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -41,59 +40,77 @@ export default function TiltEventCard() {
   };
 
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transformStyle: "preserve-3d",
-        transform,
-      }}
-      className="relative h-[380px] w-80 rounded-2xl bg-gradient-to-br from-indigo-300 to-violet-300 p-4"
-    >
-      <div
+    <div className="relative w-fit group">
+      <motion.div
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
         style={{
-          transform: "translateZ(60px)",
           transformStyle: "preserve-3d",
+          transform,
         }}
-        className="relative h-full w-full overflow-hidden rounded-2xl bg-white shadow-lg"
+        className="relative h-[380px] w-80 rounded-2xl bg-gradient-to-br from-indigo-300 to-violet-300 p-4 z-10"
       >
-        <img
-          src="https://images.unsplash.com/photo-1594026634827-fe99c0a22e83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJhZnRpbmd8ZW58MHx8MHx8fDA%3D"
-          alt="Rafting Event"
-          className="h-44 w-full object-cover"
+        {/* Background outline number */}
+        <span
+          className={number < 10?`absolute font-serif -left-22 -bottom-25 text-[180px] p-6 font-bold select-none pointer-events-none z-0 transition-all duration-300 group-hover:text-red-500`:`absolute font-serif -left-44 -bottom-25 text-[180px] p-6 font-bold select-none pointer-events-none z-0 transition-all duration-300 group-hover:text-red-500`}
+          
           style={{
-            transform: "translateZ(40px)",
+            WebkitTextStroke: "2px red",
+            WebkitTextFillColor: "red",
+            color: "transparent",
           }}
-        />
+        >
+          {number}
+        </span>
 
-        <div className="p-4" style={{ transform: "translateZ(35px)" }}>
-          <h2 className="text-lg font-bold text-gray-900">Rafting Adventure</h2>
+        {/* Card content */}
+        <div
+          style={{
+            transform: "translateZ(60px)",
+            transformStyle: "preserve-3d",
+          }}
+          className="relative h-full w-full overflow-hidden rounded-2xl bg-white shadow-lg"
+        >
+          <img
+            src={image}
+            alt={title}
+            className="h-44 w-full object-cover"
+            style={{
+              transform: "translateZ(40px)",
+            }}
+          />
 
-          <div className="flex items-center text-gray-500 text-sm mt-1">
-            <MapPin size={14} className="mr-1" /> Aspen, Colorado
-          </div>
+          <div className="p-4" style={{ transform: "translateZ(35px)" }}>
+            <h2 className="text-lg font-bold text-gray-900">{title}</h2>
 
-          <div className="flex items-center space-x-5 text-gray-700 text-sm mt-3">
-            <div className="flex items-center">
-              <Clock size={14} className="mr-1" /> 6 Hours
+            <div className="flex items-center text-gray-500 text-sm mt-1">
+              <MapPin size={14} className="mr-1" /> {location}
             </div>
-            <div className="flex items-center">
-              <Star size={14} className="mr-1 text-yellow-400" /> 4.9
-            </div>
-            <div className="font-semibold">$160</div>
-          </div>
 
-          <motion.button
-            whileTap={{ scale: 0.98 }}
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 mt-4 rounded-lg shadow-md"
-          >
-            Book Now
-          </motion.button>
+            <div className="flex items-center space-x-5 text-gray-700 text-sm mt-3">
+              <div className="flex items-center">
+                <Clock size={14} className="mr-1" /> {duration}
+              </div>
+              <div className="flex items-center">
+                <Star size={14} className="mr-1 text-yellow-400" /> {rating}
+              </div>
+              <div className="font-semibold">${price}</div>
+            </div>
+
+            <motion.button
+              whileTap={{ scale: 0.98 }}
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 mt-4 rounded-lg shadow-md"
+            >
+              Book Now
+            </motion.button>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
+
+export default TiltEventCard;

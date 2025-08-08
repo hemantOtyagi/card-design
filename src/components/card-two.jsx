@@ -2,36 +2,48 @@ import React, { useState } from "react";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
-const CardTwo = () => {
+const CardTwo = ({
+  image,
+  location,
+  title,
+  duration,
+  price,
+  priceLabel = "per person",
+  badge,
+  rating,
+  tag,
+}) => {
   const [liked, setLiked] = useState(false);
 
   return (
     <motion.div
-      className="min-w-sm h-fit w-fit rounded-2xl overflow-hidden shadow-sm bg-white"
-      whileHover={{ y: -4 }}
-      initial={{ opacity: 0, y: 10 }}
+      className="min-w-sm h-full w-fit rounded-2xl overflow-hidden shadow-sm bg-white flex flex-col"
+      whileHover={{ y: -10 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
     >
-      {/* Image with overlay badges */}
-      <div className="relative h-46 w-full">
+      {/* Image */}
+      <div className="relative h-56 shadow-2xl rounded-2xl overflow-hidden w-full">
         <motion.img
-          src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="image"
+          src={image}
+          alt={title}
           className="w-full h-full object-cover"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         />
 
-        {/* NEW badge */}
-        <span className="absolute top-3 left-3 bg-yellow-300 text-xs font-semibold px-3 py-1 rounded">
-          NEW
-        </span>
+        {/* Badge */}
+        {badge && (
+          <span className="absolute top-3 left-3 bg-yellow-300 text-xs font-semibold px-3 py-1 rounded">
+            {badge}
+          </span>
+        )}
 
-        {/* Heart icon */}
+        {/* Heart Icon */}
         <motion.button
           onClick={() => setLiked(!liked)}
-          className="absolute top-3 right-3 p-1"
+          className="absolute top-3 right-3 p-1 hover:bg-gray-100 rounded-full transition-colors duration-200"
           whileTap={{ scale: 0.9 }}
         >
           <Heart
@@ -42,34 +54,43 @@ const CardTwo = () => {
 
         {/* Rating */}
         <div className="absolute bottom-3 left-3 bg-yellow-200 px-1.5 py-0.5 rounded flex items-center text-sm font-medium">
-          <span className="text-black">★ 4.8</span>
+          <span className="text-black">★ {rating}</span>
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-3 space-y-1">
-        <p className="text-xs text-gray-500">Reykjavik, Iceland</p>
-        <h3 className="text-lg font-semibold text-gray-900">
-          Whale watching tour
-        </h3>
-        <p className="text-sm text-gray-600">3 hours • Wildlife experience</p>
+      <div className="p-3 flex flex-col flex-grow gap-y-0.5">
+        <p className="text-xs text-gray-500">{location}</p>
+        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+        <p className="text-sm text-gray-600">{duration}</p>
 
         <p className="text-sm text-gray-700">
           From{" "}
-          <span className="text-xl font-bold text-gray-900">₹12,500</span>{" "}
-          <span className="text-sm font-normal">per person</span>
+          <span className="text-xl font-bold text-gray-900">₹{price}</span>{" "}
+          <span className="text-sm font-normal">{priceLabel}</span>
         </p>
 
-        <p className="inline-block bg-red-100 text-red-700 text-xs font-medium px-2 py-1 rounded">
-          Limited spots
-        </p>
+        {tag && (
+          <p className="inline-block w-fit bg-red-100 text-red-700 text-xs font-medium px-2 py-1 rounded">
+            {tag}
+          </p>
+        )}
 
-        <motion.button
-          className="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-sm"
-          whileTap={{ scale: 0.97 }}
-        >
-          Check availability
-        </motion.button>
+        {/* Buttons pinned at bottom */}
+        <div className="flex gap-2 mt-auto pt-3">
+          <motion.button
+            className="w-full border border-blue-600 hover:bg-blue-600 text-blue-600 font-medium py-2 px-4 hover:text-white rounded-lg text-sm"
+            whileTap={{ scale: 0.97 }}
+          >
+            Check availability
+          </motion.button>
+          <motion.button
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-sm"
+            whileTap={{ scale: 0.97 }}
+          >
+            Book Now
+          </motion.button>
+        </div>
       </div>
     </motion.div>
   );
