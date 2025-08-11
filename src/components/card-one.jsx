@@ -1,83 +1,80 @@
-import { StarIcon, HeartIcon , LocateIcon} from "lucide-react";
+import { StarIcon, HeartIcon } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
 const CardOne = () => {
   const [liked, setLiked] = useState(false);
 
+  const eventName =
+    "Rafting & Kayaking Adventure in the Stunning Glacial Rivers of Iceland";
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.45, ease: [0.2, 0, 0, 1] }} 
       whileHover={{ scale: 1 }}
-      className="w-90 h-72 relative bg-white rounded-3xl flex flex-col justify-end shadow-md cursor-pointer transition-all"
+      className="relative w-90 h-78 rounded-3xl bg-white flex flex-col justify-end shadow-md hover:shadow-lg cursor-pointer transition-shadow duration-300 "
     >
       {/* Image */}
-      <div className="absolute -top-24 w-full h-68 rounded-3xl overflow-hidden shadow-xl group">
+      <div className="absolute -top-24 w-full h-68 rounded-3xl overflow-hidden shadow-lg group">
         <motion.img
-          src="https://images.unsplash.com/photo-1574116504481-e06341e984e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJhZnRpbmd8ZW58MHx8MHx8fDA%3D"
-          alt="image"
-          className="w-full h-full object-cover"
-          whileHover={{ scale: 1.08 }}
-          transition={{ duration: 0.4 }}
+          src="https://images.unsplash.com/photo-1574116504481-e06341e984e1?w=500&auto=format&fit=crop&q=60"
+          alt="Rafting Adventure"
+          className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-110"
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-          <button className="px-4 py-2  bg-white text-green-800 font-semibold rounded-lg shadow hover:bg-gray-100 transition">
-            Show Availability
-          </button>
-        </div>
+        {/* Overlay for hover effect */}
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
       </div>
 
       {/* Rating badge */}
       <motion.div
-        whileHover={{ scale: 1.1 }}
-        className="absolute z-20 flex justify-center text-sm items-center gap-1 -top-20 left-4 w-13 h-fit rounded-md bg-[#FDD67E] px-2 py-1"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.2 }}
+        className="absolute z-20 flex items-center gap-1 -top-20 left-4 bg-[#FDD67E] rounded-md px-2 py-1 text-sm font-medium shadow-sm"
       >
-        <StarIcon fill="black" size={"16px"} /> 4.8
+        <StarIcon fill="black" size={16} /> 4.8
       </motion.div>
 
-      {/* Heart */}
-      <motion.div
-        whileTap={{ scale: 1.3 }}
-        className="absolute z-20 flex justify-center items-center -top-21 right-4 cursor-pointer"
+      {/* Heart icon */}
+      <motion.button
+        whileTap={{ scale: 0.9 }}
         onClick={() => setLiked(!liked)}
+        aria-label="Like"
+        className="absolute z-20 -top-20 right-4 p-2 bg-white/70 hover:bg-white rounded-full shadow-sm transition-colors duration-200"
       >
         <HeartIcon
           fill={liked ? "red" : "none"}
           stroke={liked ? "red" : "gray"}
-          size={"28px"}
+          size={24}
         />
-      </motion.div>
+      </motion.button>
 
       {/* Content */}
-      <div className="w-full flex justify-center items-center h-28">
-        <div className="w-full max-w-full flex items-center justify-center gap-8 font-sans text-gray-800">
-          {/* Left Date */}
-          <div className="text-center border-r w-24 h-20 flex flex-col justify-center items-center">
-            <p className="text-sm tracking-wide text-gray-500">DEC</p>
-            <p className="text-4xl font-bold text-green-800">24</p>
+      <div className="w-full h-34 flex items-center px-4">
+        <div className="w-full flex items-center gap-6 font-sans text-gray-800">
+          {/* Date */}
+          <div className="text-center border-r border-gray-500 w-20 h-24 flex flex-col items-center justify-center py-2">
+            <p className="text-xs font-medium tracking-wide text-gray-500">DEC</p>
+            <p className="text-3xl font-bold text-green-800">24</p>
           </div>
 
-          {/* Right Content */}
-          <div className="flex-1 w-52">
-            <div className="flex items-center text-xs text-gray-600 ">
-              <span>Reykjavik, Iceland</span>
-            </div>
+          {/* Event info */}
+          <div className="flex-1 ">
+            <p className="text-xs text-gray-600">Reykjavik, Iceland</p>
 
-            <h2 className="text-xl font-semibold text-green-900 leading-tight">
-              Rafting & Kayaking
+            <h2 className="text-base font-semibold text-green-900 leading-snug line-clamp-2 mt-0.5">
+              {eventName}
             </h2>
 
-            <p className="text-sm text-gray-600  w-52">
-              3 hours. wildlife experience
+            <p className="text-xs text-gray-600 mt-0.5">
+              3 hours · Wildlife experience
             </p>
 
-            <p className="text-sm text-gray-600 ">
+            <p className="text-sm text-gray-700 mt-1">
               <span className="font-semibold text-green-800">
-                from <b>12,500</b> per person
+                from <b>₹12,500</b> per person
               </span>
             </p>
           </div>
