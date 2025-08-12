@@ -14,7 +14,7 @@ export default function FlightCard() {
   const [liked, setLiked] = useState(false);
 
   return (
-    <Card className="w-80 rounded-3xl overflow-hidden shadow-lg bg-white flex flex-col p-2 border-0">
+    <Card className="w-80 rounded-4xl overflow-hidden shadow-lg bg-white flex flex-col p-1 border-0">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export default function FlightCard() {
         className="flex flex-col"
       >
         {/* Image with like button */}
-        <CardHeader className="relative h-72  w-full p-0 rounded-3xl overflow-hidden">
+        <CardHeader className="relative h-76  w-full p-0 rounded-4xl overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1698472505070-6d3b90afb530?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Whale Watching Tour"

@@ -65,13 +65,13 @@ export default function EventCard() {
         <CardFooter className="px-3 pb-3">
           <div className="flex gap-4">
             {/* Date */}
-            <div className="flex flex-col items-center justify-center w-16 border-r border-gray-300 pr-4">
+            <div className="flex flex-col items-center justify-center w-16 pl-0.5 border-r border-gray-300 pr-4">
               <p className="text-xs font-medium tracking-wide text-gray-500">DEC</p>
               <p className="text-2xl font-bold text-green-800">24</p>
             </div>
 
             {/* Event info */}
-            <div className="flex-1">
+            <div className="flex-1 pl-2">
               <p className="text-xs text-gray-600 mt-1">
                 3 hours · Wildlife experience
               </p>
