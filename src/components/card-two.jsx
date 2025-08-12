@@ -52,17 +52,19 @@ const CardTwo = ({
           />
         </motion.button>
 
-        {/* Rating */}
-        {rating && (
-          <div className="absolute flex gap-1 justify-center items-center bottom-3 left-3 bg-yellow-200 px-2 py-1 rounded-full text-sm font-medium">
-            <StarIcon  size={"16px"} fill="black"/>{rating}
-          </div>
-        )}
       </div>
 
       {/* Content Section */}
       <div className="p-4 flex flex-col gap-2">
-        <p className="text-sm text-gray-500">{location}</p>
+        <div className="flex justify-between">
+          <p className="text-sm text-gray-500">{location}</p>
+        {/* Rating */}
+        {rating && (
+          <div className=" flex gap-1 justify-center items-center  bg-yellow-200 px-1 py-0.5 rounded-full text-xs font-medium">
+            <StarIcon  size={"12px"} fill="black"/>{rating}
+          </div>
+        )}
+        </div>
         <h3 className="text-lg w-72 font-semibold text-gray-900 leading-tight line-clamp-2">
           {eventName}
         </h3>

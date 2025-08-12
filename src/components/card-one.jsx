@@ -24,8 +24,6 @@ const CardOne = () => {
           className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-110"
         />
 
-        {/* Overlay for hover effect */}
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
       </div>
 
       {/* Rating badge */}

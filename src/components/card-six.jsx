@@ -22,12 +22,11 @@ export default function FlightCard() {
         className="flex flex-col"
       >
         {/* Image with like button */}
-        <CardHeader className="relative h-68 w-full p-0 bg-red-600  rounded-3xl overflow-hidden">
+        <CardHeader className="relative h-72  w-full p-0 rounded-3xl overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1518399681705-1c1a55e5e883?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1698472505070-6d3b90afb530?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Whale Watching Tour"
-            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-
+            className="w-full h-full object-contain hover:scale-110 transition-transform duration-300"
           />
 
           {/* Like Button with micro-interaction */}
