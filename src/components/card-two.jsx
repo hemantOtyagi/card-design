@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { Heart, StarIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import { formatINR } from "@/lib/utils";
 
 const CardTwo = ({
   image,
   location,
   title,
   duration,
-  price,
-  priceLabel = "per person",
-  badge,
+  price, priceLabel = "/person", badge,
   rating,
   tag,
 }) => {
@@ -63,25 +62,29 @@ const CardTwo = ({
 
       {/* Content Section */}
       <div className="p-4 flex flex-col gap-2">
-        <p className="text-xs text-gray-500">{location}</p>
+        <p className="text-sm text-gray-500">{location}</p>
         <h3 className="text-lg w-72 font-semibold text-gray-900 leading-tight line-clamp-2">
           {eventName}
         </h3>
         {duration && (
-          <p className="text-sm text-gray-600">{duration}</p>
+          <p className="text-sm py-0.5 text-gray-600">{duration}</p>
         )}
 
-        <p className="text-sm text-gray-700 mt-1">
-          From{" "}
-          <span className="text-xl font-bold text-gray-900">₹{price}</span>{" "}
-          <span className="text-xs font-normal">{priceLabel}</span>
-        </p>
+        <div className="flex justify-between items-center">
+          <p className="flex flex-row items-baseline-last gap-1 flex-nowrap  text-sm text-gray-700 mt-1">
+            <span className="text-xs font-normal ">
+              from
+            </span>
+            <span className="text-xl font-bold text-gray-900">{formatINR(price,false)}</span>
+            <span className="text-xs font-normal">{priceLabel}</span>
+          </p>
 
-        {tag && (
-          <span className="inline-block w-fit bg-red-100 text-red-700 text-xs font-medium px-2 py-0.5 rounded-full mt-1">
-            {tag}
-          </span>
-        )}
+          {tag && (
+            <span className="inline-block w-fit bg-red-100 text-red-700 text-xs font-medium px-2 py-0.5 rounded-full mt-1">
+              {tag}
+            </span>
+          )}
+        </div>
       </div>
     </motion.div>
   );

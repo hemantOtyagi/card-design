@@ -15,6 +15,8 @@ import TravelEventCard from "./components/card-five";
 import CardFive from "./components/card-five";
 import TiltEventCard from "./components/tilt-card";
 import NumberOutline from "./components/number-outline";
+import EventCard from "./components/new-card";
+import CardSix from "./components/card-six";
 
 
 
@@ -24,7 +26,7 @@ const events = [
     location: "Reykjavik, Iceland",
     title: "Whale Watching Tour",
     duration: "3 hours • Wildlife experience",
-    price: 12500,
+    price: 199000,
     badge: "NEW",
     rating: 4.8,
     tag: "Limited spots",
@@ -99,7 +101,8 @@ const Example = () => {
       {/*     <TiltEventCard key={event.number} {...event} /> */}
       {/*   ))} */}
       {/* </div> */}
-
+      <EventCard/>
+      <CardSix/>
     </div>
   );
 };
