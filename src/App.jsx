@@ -1,4 +1,8 @@
+"use client"
+
 import React, { useRef } from "react";
+import {Swiper, SwiperSlide} from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import {
   motion,
   useMotionTemplate,
@@ -17,6 +21,7 @@ import TiltEventCard from "./components/tilt-card";
 import NumberOutline from "./components/number-outline";
 import EventCard from "./components/new-card";
 import CardSix from "./components/card-six";
+import BentoGrid from "./components/bento-grid";
 
 
 
@@ -26,49 +31,48 @@ const events = [
     location: "Reykjavik, Iceland",
     title: "Whale Watching Tour",
     duration: "3 hours • Wildlife experience",
-    price: 199000,
-    badge: "NEW",
+    price: 199000, badge: "NEW",
     rating: 4.8,
     tag: "Limited spots",
   },
-  // {
-  //   image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1173",
-  //   location: "Maldives",
-  //   title: "Scuba Diving Adventure",
-  //   duration: "5 hours • Underwater paradise",
-  //   price: 18999,
-  //   badge: "HOT",
-  //   rating: 4.9,
-  //   tag: "Best seller",
-  // },
-  // {
-  //   image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1173",
-  //   location: "Paris, France",
-  //   title: "Eiffel Tower Night Tour",
-  //   duration: "2 hours • City lights",
-  //   price: 8500,
-  //   badge: "POPULAR",
-  //   rating: 4.7,
-  // },
-  // {
-  //   image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1173",
-  //   location: "Swiss Alps, Switzerland",
-  //   title: "Mountain Hiking Expedition",
-  //   duration: "8 hours • Nature escape",
-  //   price: 15500,
-  //   badge: "NEW",
-  //   rating: 4.9,
-  //   tag: "Only 3 left",
-  // },
-  // {
-  //   image: "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1173",
-  //   location: "Kyoto, Japan",
-  //   title: "Cherry Blossom Walking Tour",
-  //   duration: "4 hours • Cultural experience",
-  //   price: 9900,
-  //   badge: "SEASONAL",
-  //   rating: 4.8,
-  // },
+  {
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1173",
+    location: "Maldives",
+    title: "Scuba Diving Adventure",
+    duration: "5 hours • Underwater paradise",
+    price: 18999,
+    badge: "HOT",
+    rating: 4.9,
+    tag: "Best seller",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1173",
+    location: "Paris, France",
+    title: "Eiffel Tower Night Tour",
+    duration: "2 hours • City lights",
+    price: 8500,
+    badge: "POPULAR",
+    rating: 4.7,
+  },
+  {
+    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1173",
+    location: "Swiss Alps, Switzerland",
+    title: "Mountain Hiking Expedition",
+    duration: "8 hours • Nature escape",
+    price: 15500,
+    badge: "NEW",
+    rating: 4.9,
+    tag: "Only 3 left",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1173",
+    location: "Kyoto, Japan",
+    title: "Cherry Blossom Walking Tour",
+    duration: "4 hours • Cultural experience",
+    price: 9900,
+    badge: "SEASONAL",
+    rating: 4.8,
+  },
 ];
 
 const event = Array.from({ length: 1 }, (_, i) => ({
@@ -83,26 +87,10 @@ const event = Array.from({ length: 1 }, (_, i) => ({
 
 const Example = () => {
   return (
-    <div className="flex justify-center items-center gap-6 w-full  h-screen place-content-center bg-[#212121] px-4 py-12 text-slate-900">
-      <CardOne/>
-      {/* <CardTwo/> */}
-      {/* <CardThree/> */}
-      {/* <CardFour/> */}
-      {/* <CardFive/> */}
-      {/* <TiltEventCard/> */}
-
-      {events.map((event, idx) => (
-        <CardTwo key={idx} {...event} />
-      ))}
-      {/* <NumberOutline/> */}
-
-      {/* <div className="flex flex-wrap gap-6"> */}
-      {/*   {event.map((event) => ( */}
-      {/*     <TiltEventCard key={event.number} {...event} /> */}
-      {/*   ))} */}
-      {/* </div> */}
-      <EventCard/>
-      <CardSix/>
+    <div className="flex justify-center items-center">
+      <div className="max-w-screen-xl p-2  bg-[#212121] h-screen  flex justify-center items-center">
+        <BentoGrid/>
+      </div>
     </div>
   );
 };
