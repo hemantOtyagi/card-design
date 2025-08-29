@@ -22,6 +22,7 @@ import NumberOutline from "./components/number-outline";
 import EventCard from "./components/new-card";
 import CardSix from "./components/card-six";
 import BentoGrid from "./components/bento-grid";
+import MasonryGrid from "./components/masonry-grid";
 
 
 
@@ -89,7 +90,8 @@ const Example = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-screen-xl p-2  bg-[#212121] h-screen  flex justify-center items-center">
-        <BentoGrid/>
+        {/* <BentoGrid/> */}
+        <MasonryGrid/>
       </div>
     </div>
   );
