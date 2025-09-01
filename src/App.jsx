@@ -90,8 +90,8 @@ const Example = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-screen-xl p-2  bg-[#212121] h-screen  flex justify-center items-center">
-        {/* <BentoGrid/> */}
-        <MasonryGrid/>
+        <BentoGrid/>
+        {/* <MasonryGrid/> */}
       </div>
     </div>
   );

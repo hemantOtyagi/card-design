@@ -1,71 +1,30 @@
-import React from "react";
+const gridItems = [
+  { src: "https://images.unsplash.com/photo-1755289446025-d04dfe8f0fe3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5Nnx8fGVufDB8fHx8fA%3D%3D", span: "col-span-3" },
+  { src: "https://images.unsplash.com/photo-1756470843828-617611d35cf6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { src: "https://images.unsplash.com/photo-1754753676170-f91ffcddb57e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDZ8fHxlbnwwfHx8fHw%3D", span: " col-span-1 " },
+  { src: "https://plus.unsplash.com/premium_photo-1720767867216-6e91cce51244?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", span: "row-span-3col-span-1" },
+  { src: "https://images.unsplash.com/photo-1755895926335-a113232e064f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", span: "col-span-2" },
+  { src: "https://images.unsplash.com/photo-1756302637887-1c00e98fd0cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNDd8fHxlbnwwfHx8fHw%3D", span: " col-span-2 " },
+  { src: "https://images.unsplash.com/photo-1756302637887-1c00e98fd0cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNDd8fHxlbnwwfHx8fHw%3D", span: " col-span-2 " },
+];
 
 export default function BentoGrid() {
   return (
-    <div className="grid grid-cols-4 grid-rows-4 max-w-fit  border p-1 bg-white gap-2 rounded-lg overflow-hidden  max-h-96 ">
-      {/* Large main image (left side, spanning all rows) */}
-      <div className="col-span-1 row-span-4 relative">
-        <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
-          alt="Main room"
-          className="w-full h-full object-cover rounded-lg hover:scale-101 transition-transform duration-300"
-        />
-      </div>
-
-      {/* Top right big image */}
-      <div className="col-span-1 row-span-2 relative">
-        <img
-          src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=1074&auto=format&fit=crop"
-          alt="Bedroom"
-          className="w-full h-full object-cover rounded-lg hover:scale-101 transition-transform duration-300"
-        />
-      </div>
-
-      {/* Middle row - two side images */}
-      <div className="col-span-1 row-span-4 relative">
-        <img
-          src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?q=80&w=687&auto=format&fit=crop"
-          alt="Living room"
-          className="w-full h-full object-cover rounded-lg hover:scale-101 transition-transform duration-300"
-        />
-      </div>
-
-      <div className="col-span-1 row-span-2 relative">
-        <img
-          src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Dining"
-          className="w-full h-full object-cover rounded-lg hover:scale-101 transition-transform duration-300"
-        />
-      </div>
-
-      {/* Bottom row - three smaller images */}
-      {/* <div className="col-span-1 row-span-1 relative"> */}
-      {/*   <img */}
-      {/*     src="https://plus.unsplash.com/premium_photo-1686090446908-60fbb45f2805?q=80&w=687&auto=format&fit=crop" */}
-      {/*     alt="Decor" */}
-      {/*     className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" */}
-      {/*   /> */}
-      {/* </div> */}
-      {/**/}
-      <div className="col-span-1 row-span-2 relative">
-        <img
-          src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop"
-          alt="Balcony"
-          className="w-full h-full object-cover rounded-lg hover:scale-101 transition-transform duration-300"
-        />
-      </div>
-
-      <div className="col-span-1 row-span-2 relative">
-        <img
-          src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop"
-          alt="Bathroom"
-          className="w-full h-full object-cover rounded-lg hover:scale-101 transition-transform duration-300"
-        />
-        {/* Show all photos overlay button */}
-        <button className="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-3 py-1 rounded-md hover:bg-black/80">
-          Show all photos
-        </button>
-      </div>
+    <div className="grid grid-cols-6   gap-3 p-2 h-fit max-w-6xl mx-auto bg-white">
+      {gridItems.map((item, i) => (
+        <div
+          key={i}
+          className={`rounded-2xl overflow-hidden ${item.span || ""} `}
+        >
+          <img
+            src={item.src}
+            alt={`Decor ${i + 1}`}
+            width={800}
+            height={800}
+            className="object-cover w-full h-full"
+          />
+        </div>
+      ))}
     </div>
   );
 }
