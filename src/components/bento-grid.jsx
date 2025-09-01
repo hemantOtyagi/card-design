@@ -10,21 +10,31 @@ const gridItems = [
 
 export default function BentoGrid() {
   return (
-    <div className="grid grid-cols-6   gap-3 p-2 h-fit max-w-6xl mx-auto bg-white">
-      {gridItems.map((item, i) => (
-        <div
-          key={i}
-          className={`rounded-2xl overflow-hidden ${item.span || ""} `}
-        >
-          <img
-            src={item.src}
-            alt={`Decor ${i + 1}`}
-            width={800}
-            height={800}
-            className="object-cover w-full h-full"
-          />
-        </div>
-      ))}
+<div class="main">
+    <div class="box wide">
+     <img src="https://cdn.pixabay.com/photo/2023/06/27/04/05/spiderman-8091331_960_720.jpg" alt="error"/>
     </div>
+    <div class="box medium">
+      <img src="https://4kwallpapers.com/images/walls/thumbs_3t/11245.jpeg"/>
+        <div class="box tall">
+          <img src="https://4kwallpapers.com/images/walls/thumbs_3t/11671.jpg" alt="spiderman"/>
+        </div>
+    </div>
+    <div class="box tall">
+     <img src="https://4kwallpapers.com/images/walls/thumbs_3t/7525.jpg" />
+    </div>
+    <div class="box wide">
+      <img src="https://4kwallpapers.com/images/walls/thumbs_3t/11600.jpeg" />
+    </div>
+      <div class="box medium">
+        <img src="https://4kwallpapers.com/images/walls/thumbs_3t/7214.png" alt="spiderman"/>
+      </div>
+      <div class="box medium">
+        <img src="https://4kwallpapers.com/images/walls/thumbs_3t/7214.png" alt="spiderman"/>
+      </div>
+    <div class="box small">
+     <img src="https://4kwallpapers.com/images/walls/thumbs_3t/7525.jpg" />
+    </div>
+  </div>
   );
 }

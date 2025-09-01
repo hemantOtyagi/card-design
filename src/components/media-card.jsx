@@ -31,25 +31,28 @@ export const mediaItems = [
 ];
 
 // Media Card Component
+// MediaCard.jsx
 const MediaCard = ({ item, index }) => {
   if (item.type === "image") {
     return (
-      <img
-        key={index}
-        src={item.src}
-        alt={item.alt || `media-${index}`}
-        loading="lazy"
-        className="w-full rounded-xl object-cover shadow-md break-inside-avoid"
-      />
+      <div className="h-[250px] w-full break-inside-avoid">
+        <img
+          key={index}
+          src={item.src}
+          alt={item.alt || `media-${index}`}
+          loading="lazy"
+          className="w-full h-full rounded-xl object-fill shadow-md"
+        />
+      </div>
     );
   }
 
   if (item.type === "video") {
     return (
-      <div key={index} className="col-span-full break-inside-avoid">
+      <div key={index} className="h-[480px] w-full break-inside-avoid">
         <video
           controls
-          className="w-full h-[480px] object-cover rounded-xl shadow-lg"
+          className="w-full h-full object-fill rounded-xl shadow-lg"
         >
           <source src={item.src} type="video/mp4" />
         </video>
