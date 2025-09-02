@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useRef } from "react";
+import Grid from "./components/grid";
 import {Swiper, SwiperSlide} from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import {
@@ -88,10 +89,11 @@ const event = Array.from({ length: 1 }, (_, i) => ({
 
 const Example = () => {
   return (
-    <div className="flex justify-center items-center">
-      <div className="max-w-screen-lg p-2  bg-[#212121] h-screen  flex justify-center items-center">
-        <BentoGrid/>
+    <div className="flex justify-center items-center h-screen bg-[#212121]">
+      <div className="max-w-screen-xl p-2   h-fit  flex justify-center items-center">
+        {/* <BentoGrid/> */}
         {/* <MasonryGrid/> */}
+        <Grid/>
       </div>
     </div>
   );
