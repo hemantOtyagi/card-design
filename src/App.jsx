@@ -24,6 +24,7 @@ import EventCard from "./components/new-card";
 import CardSix from "./components/card-six";
 import BentoGrid from "./components/bento-grid";
 import MasonryGrid from "./components/masonry-grid";
+import ComfortSection from "./components/comfort-section";
 
 
 
@@ -90,10 +91,11 @@ const event = Array.from({ length: 1 }, (_, i) => ({
 const Example = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-[#212121]">
-      <div className="max-w-screen-xl p-2   h-fit  flex justify-center items-center">
+      <div className="max-w-screen-xl p-2 bg-white   h-fit  flex justify-center items-center">
         {/* <BentoGrid/> */}
         {/* <MasonryGrid/> */}
-        <Grid/>
+        <ComfortSection/>
+        {/* <Grid/> */}
       </div>
     </div>
   );

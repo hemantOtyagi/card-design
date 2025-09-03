@@ -10,7 +10,7 @@ export const mediaItems = [
   },
   {
     type: "image",
-    src: "https://images.unsplash.com/photo-1629078691412-ffc8e1bcfaf6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fG1vZGVybiUyMGJhdGhyb29tfGVufDB8fDB8fHww",
+    src: "https://images.unsplash.com/photo-1629078691412-ffc8e1bcfaf6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=m3wxmja3fdb8mhxzzwfyy2h8mjj8fg1vzgvybiuymgjhdghyb29tfgvufdb8fdb8fhww",
     alt: "Cozy Bedroom",
   },
   {
