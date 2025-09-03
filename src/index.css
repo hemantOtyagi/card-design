@@ -127,7 +127,6 @@ body{
   }
 }
 
-
 *{box-sizing: border-box}
 
 .main{
@@ -149,7 +148,6 @@ body{
   display: block;
 }
 
-
 .box{
    background: #22C1C3;
   display: flex;
@@ -158,27 +156,27 @@ body{
   border-radius: 8px;
   position: relative;
   overflow: hidden;
-  
+
   &.medium{
     grid-row: span 2;
     grid-column: span 2;
   }
-  
+
   &.small{
     grid-row: span 2;
     grid-column: span 1;
   }
-  
+
   &.large{
     grid-column: span 3;
     grid-row: span 3;
   }
-  
+
   &.tall{
     grid-row: span 4;
     grid-column: span 2; 
   }
-  
+
   &.wide{
     grid-row: span 3;
     grid-column: span 3;

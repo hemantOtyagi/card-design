@@ -5,12 +5,6 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-
-export function formatINR(amount, showDecimals = true) {
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
-    minimumFractionDigits: showDecimals ? 2 : 0,
-    maximumFractionDigits: showDecimals ? 2 : 0,
-  }).format(amount);
+export function formatINR(){
+  return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format;
 }
