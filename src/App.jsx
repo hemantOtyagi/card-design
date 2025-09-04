@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useRef } from "react";
+import { Tabs, TabsList, TabsContent, TabsTrigger } from "./components/ui/tabs";
 import Grid from "./components/grid";
 import {Swiper, SwiperSlide} from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -29,6 +30,7 @@ import BookingWidget from "./components/booking-widget";
 import AmenitiesSection from "./components/amenities-section";
 import ItineararyCard from "./components/itinerary-card";
 import NewGrid from "./components/new-grid";
+import ItineraryList from "./components/itinerary-card";
 
 
 
@@ -101,9 +103,20 @@ const Example = () => {
         {/* <ComfortSection/> */}
         {/* <BookingWidget/> */}
         {/* <AmenitiesSection/> */}
-        <ItineararyCard/>
+        {/* <ItineararyCard/> */}
+        {/* <ItineraryList/> */}
         {/* <NewGrid/> */}
         {/* <Grid/> */}
+        <Tabs defaultValue="itinearary" className="w-[50vw]">
+          <TabsList>
+            <TabsTrigger value="itinearary">Itinearary</TabsTrigger>
+            <TabsTrigger value="inclusions">Inclusions</TabsTrigger>
+            <TabsTrigger value="grid">Grid</TabsTrigger>
+          </TabsList>
+          <TabsContent value="itinearary"><ItineraryList/></TabsContent>
+          <TabsContent value="inclusions">Change your password here.</TabsContent>
+          <TabsContent value="grid"><NewGrid/></TabsContent>
+        </Tabs>
       </div>
     </div>
   );
