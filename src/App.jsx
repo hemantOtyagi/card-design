@@ -31,6 +31,9 @@ import AmenitiesSection from "./components/amenities-section";
 import ItineararyCard from "./components/itinerary-card";
 import NewGrid from "./components/new-grid";
 import ItineraryList from "./components/itinerary-card";
+import ItineraryListTwo from "./components/itinerary-card-two";
+import TourInclusionsExclusions from "./components/inclusion-exclusion";
+import ItineraryListThree from "./components/ininerary-card-three";
 
 
 
@@ -94,6 +97,27 @@ const event = Array.from({ length: 1 }, (_, i) => ({
   image: "https://images.unsplash.com/photo-1594026634827-fe99c0a22e83?w=500&auto=format&fit=crop&q=60"
 }));
 
+
+const inclusions = [
+  "Travel (Guwahati to Guwahati)",
+  "Stay for 5 nights",
+  "5 Breakfasts",
+  "Dawki River Boating, Cliff Jumping",
+  "Meghalaya Khasi tribe dress up",
+  "All entry tickets, permissions",
+  "Trip Captain (for bigger groups above 6 members)",
+  "Local guide for Double Decker, Rainbow Trekking",
+  "Airport pickup and drop (fixed timings)",
+  "Bonfire (at least 1 time)",
+  "Once in a lifetime experience visiting all places mentioned in Highlights section",
+];
+
+const exclusions = [
+  "Lunches, Dinners",
+  "Any kind of activities other than mentioned above or insurance, shopping, party, medical or misc. expenses.",
+  "Any reimbursements for cancelled activities, or extra cost arising due to any change in the itinerary/stay/route on account of bad weather, traffic-congestion, landslides/roadblocks, natural calamities, political disturbances and/or any other factors beyond organizers control.",
+];
+
 const Example = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-[#212121]">
@@ -114,7 +138,7 @@ const Example = () => {
             <TabsTrigger value="grid">Grid</TabsTrigger>
           </TabsList>
           <TabsContent value="itinearary"><ItineraryList/></TabsContent>
-          <TabsContent value="inclusions">Change your password here.</TabsContent>
+          <TabsContent value="inclusions"><TourInclusionsExclusions inclusions={inclusions} exclusions={exclusions}/></TabsContent>
           <TabsContent value="grid"><NewGrid/></TabsContent>
         </Tabs>
       </div>
