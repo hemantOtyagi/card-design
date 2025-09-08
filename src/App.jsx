@@ -34,6 +34,8 @@ import ItineraryList from "./components/itinerary-card";
 import ItineraryListTwo from "./components/itinerary-card-two";
 import TourInclusionsExclusions from "./components/inclusion-exclusion";
 import ItineraryListThree from "./components/ininerary-card-three";
+import ItineraryAccordion from "./components/accordian-itinerary-list";
+import ItineraryAccordionTwo from "./components/accordian-itinerary-list-two";
 
 
 
@@ -128,19 +130,22 @@ const Example = () => {
         {/* <BookingWidget/> */}
         {/* <AmenitiesSection/> */}
         {/* <ItineararyCard/> */}
+        {/* <ItineraryListThree/> */}
+        {/* <ItineraryAccordion/> */}
+        <ItineraryAccordionTwo/>
         {/* <ItineraryList/> */}
         {/* <NewGrid/> */}
         {/* <Grid/> */}
-        <Tabs defaultValue="itinearary" className="w-[50vw]">
-          <TabsList>
-            <TabsTrigger value="itinearary">Itinearary</TabsTrigger>
-            <TabsTrigger value="inclusions">Inclusions</TabsTrigger>
-            <TabsTrigger value="grid">Grid</TabsTrigger>
-          </TabsList>
-          <TabsContent value="itinearary"><ItineraryList/></TabsContent>
-          <TabsContent value="inclusions"><TourInclusionsExclusions inclusions={inclusions} exclusions={exclusions}/></TabsContent>
-          <TabsContent value="grid"><NewGrid/></TabsContent>
-        </Tabs>
+        {/* <Tabs defaultValue="itinearary" className="w-[50vw]"> */}
+        {/*   <TabsList> */}
+        {/*     <TabsTrigger value="itinearary">Itinearary</TabsTrigger> */}
+        {/*     <TabsTrigger value="inclusions">Inclusions</TabsTrigger> */}
+        {/*     <TabsTrigger value="grid">Grid</TabsTrigger> */}
+        {/*   </TabsList> */}
+        {/*   <TabsContent value="itinearary"><ItineraryList/></TabsContent> */}
+        {/*   <TabsContent value="inclusions"><TourInclusionsExclusions inclusions={inclusions} exclusions={exclusions}/></TabsContent> */}
+        {/*   <TabsContent value="grid"><NewGrid/></TabsContent> */}
+        {/* </Tabs> */}
       </div>
     </div>
   );

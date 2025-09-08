@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { FaRegPlusSquare } from "react-icons/fa";
+import { IoMdArrowDropdownCircle } from "react-icons/io";
 
 // Reusable Card Component
 const ItineraryCard = ({ day, title, description, image, detailsImage, details }) => {
@@ -19,9 +20,9 @@ const ItineraryCard = ({ day, title, description, image, detailsImage, details }
               <h1 className="absolute font-bold text-md text-white flex justify-center items-center bg-black/20  h-full w-full  rounded-sm">Day {day}</h1>
             </div>
             <p className="text-sm text-gray-700 leading-snug mt-1 pr-2  text-start w-82">{description}</p>
-            {/* <DialogTrigger asChild className="cursor-pointer text-blue-600 hover:text-blue-800"> */}
-            {/*   <FaRegPlusSquare className="inline mr-1" size={20} /> */}
-            {/* </DialogTrigger> */}
+            <DialogTrigger asChild className="cursor-pointer text-blue-600 hover:text-blue-800">
+              <IoMdArrowDropdownCircle className="inline mr-1" size={25} fill="black" />
+            </DialogTrigger>
           </div>
 
         </div>
