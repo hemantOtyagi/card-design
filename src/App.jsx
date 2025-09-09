@@ -131,8 +131,8 @@ const Example = () => {
         {/* <AmenitiesSection/> */}
         {/* <ItineararyCard/> */}
         {/* <ItineraryListThree/> */}
-        {/* <ItineraryAccordion/> */}
-        <ItineraryAccordionTwo/>
+        <ItineraryAccordion/>
+        {/* <ItineraryAccordionTwo/> */}
         {/* <ItineraryList/> */}
         {/* <NewGrid/> */}
         {/* <Grid/> */}
