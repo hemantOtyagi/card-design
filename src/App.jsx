@@ -36,6 +36,10 @@ import TourInclusionsExclusions from "./components/inclusion-exclusion";
 import ItineraryListThree from "./components/ininerary-card-three";
 import ItineraryAccordion from "./components/accordian-itinerary-list";
 import ItineraryAccordionTwo from "./components/accordian-itinerary-list-two";
+import FeedbackCard from "./components/feedback-card";
+import PickupLocation from "./components/pickup-location";
+import TeamCard from "./components/team-card";
+import HeroSection from "./components/hero-section";
 
 
 
@@ -131,7 +135,22 @@ const Example = () => {
         {/* <AmenitiesSection/> */}
         {/* <ItineararyCard/> */}
         {/* <ItineraryListThree/> */}
-        <ItineraryAccordion/>
+        {/* <ItineraryAccordion/> */}
+        {/* <TeamCard/> */}
+        <HeroSection/>
+        {/* <FeedbackCard */}
+        {/*   rating={4} */}
+        {/*   title="Excellent norwegian food!" */}
+        {/*   feedback="Great food and a cosy environment. If you want to try traditional norwegian food, this is the place to go." */}
+        {/*   user="Carrie Brewer" */}
+        {/*   date="Yesterday" */}
+        {/*   avatar="https://plus.unsplash.com/premium_photo-1695604461277-fa3f0d46da6c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" */}
+        {/* /> */}
+        {/* <PickupLocation */}
+        {/*   lat={28.4595} */}
+        {/*   lng={77.0266} */}
+        {/*   label="Gurugram, Haryana, India" */}
+        {/* /> */}
         {/* <ItineraryAccordionTwo/> */}
         {/* <ItineraryList/> */}
         {/* <NewGrid/> */}
