@@ -10,13 +10,13 @@ import {
 } from "@/components/ui/dialog";
 
 
-const TeamCard = ({ avatar, name, dialogTitle, dialogDescription }) => {
+const TeamCardTwo = ({ avatar, name, dialogTitle, dialogDescription }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="flex items-center gap-4 rounded-xl cursor-pointer border-outline bg-surface text-white p-4 shadow-xs shadow-white hover:shadow-md transition-shadow duration-100">
+        <div className="flex items-center gap-3 rounded-lg cursor-pointer border-outline bg-surface text-white p-3 shadow-xs shadow-white hover:shadow-md transition-shadow duration-150">
           {/* Avatar */}
-          <div className="relative h-15 w-15 rounded-full overflow-hidden border border-outline-variant">
+          <div className="relative h-12 w-12 rounded-full overflow-hidden border border-outline-variant">
             <img
               src={avatar}
               alt={name}
@@ -26,7 +26,7 @@ const TeamCard = ({ avatar, name, dialogTitle, dialogDescription }) => {
 
           {/* Text */}
           <div className="flex flex-col">
-            <p className="text-title-medium font-semibold text-on-surface">
+            <p className="text-title-small font-semibold text-on-surface">
               {name}
             </p>
           </div>
@@ -47,4 +47,4 @@ const TeamCard = ({ avatar, name, dialogTitle, dialogDescription }) => {
   );
 };
 
-export default TeamCard;
+export default TeamCardTwo;

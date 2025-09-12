@@ -40,6 +40,9 @@ import FeedbackCard from "./components/feedback-card";
 import PickupLocation from "./components/pickup-location";
 import TeamCard from "./components/team-card";
 import HeroSection from "./components/hero-section";
+import TeamCardContainer from "./components/team-card-container";
+import TeamCardTwoContainer from "./components/team-card-two-container";
+import ScrollSpyNav from "./components/scroll-spy-nav";
 
 
 
@@ -137,7 +140,12 @@ const Example = () => {
         {/* <ItineraryListThree/> */}
         {/* <ItineraryAccordion/> */}
         {/* <TeamCard/> */}
-        <HeroSection/>
+        {/* <div className="flex flex-col  gap-22"> */}
+        {/*   <TeamCardContainer/> */}
+        {/*   <TeamCardTwoContainer/> */}
+        {/* </div> */}
+
+        <ScrollSpyNav/>
         {/* <FeedbackCard */}
         {/*   rating={4} */}
         {/*   title="Excellent norwegian food!" */}

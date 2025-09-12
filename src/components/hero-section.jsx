@@ -32,7 +32,7 @@ const HeroSection = () => {
             <img
           src="/tripper.png"
           alt="travel"
-          className="absolute inset-0 h-full w-full object-cover z-10"
+          className="absolute inset-0 h-full w-full object-cover z-10 rounded-full"
             />
           </div> 
         </div>
