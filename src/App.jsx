@@ -43,7 +43,8 @@ import HeroSection from "./components/hero-section";
 import TeamCardContainer from "./components/team-card-container";
 import TeamCardTwoContainer from "./components/team-card-two-container";
 import ScrollSpyNav from "./components/scroll-spy-nav";
-import BorderEffectCard from "./components/border-animation/border-effect-card";
+import BorderEffectCard from "./components/animations/border-animation/border-effect-card";
+import GlowBackground from "./components/animations/glowing-background/glow-background";
 
 
 
@@ -131,7 +132,7 @@ const exclusions = [
 const Example = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-[#212121]">
-      <div className="max-w-screen-xl text-white text-xl       h-fit  flex justify-center items-center">
+      <div className="min-w-5xl text-white text-xl min-h-[80vh] bg-black h-fit  flex justify-center items-center">
         {/* <BentoGrid/> */}
         {/* <MasonryGrid/> */}
         {/* <ComfortSection/> */}
@@ -145,7 +146,8 @@ const Example = () => {
         {/*   <TeamCardContainer/> */}
         {/*   <TeamCardTwoContainer/> */}
         {/* </div> */}
-        <BorderEffectCard/>
+        {/* <BorderEffectCard/> */}
+        <GlowBackground/>
         {/* <ScrollSpyNav/> */}
         {/* <FeedbackCard */}
         {/*   rating={4} */}
