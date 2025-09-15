@@ -28,11 +28,11 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="rounded-sm overflow-hidden  z-30 h-20 w-20" >
-           <div className="relative w-full h-full   overflow-hidden  ">
+          <div className="relative w-full h-full   overflow-hidden  ">
             <img
-          src="/tripper.png"
-          alt="travel"
-          className="absolute inset-0 h-full w-full object-cover z-10 rounded-full"
+              src="/tripper.png"
+              alt="travel"
+              className="absolute inset-0 h-full w-full object-cover z-10 rounded-full"
             />
           </div> 
         </div>

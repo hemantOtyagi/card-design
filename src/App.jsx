@@ -143,14 +143,14 @@ const Example = () => {
         {/* <ItineraryListThree/> */}
         {/* <ItineraryAccordion/> */}
         {/* <TeamCard/> */}
-        {/* <div className="flex flex-col  gap-22"> */}
-        {/*   <TeamCardContainer/> */}
-        {/*   <TeamCardTwoContainer/> */}
-        {/* </div> */}
+        <div className="flex flex-col  gap-22">
+          <TeamCardContainer/>
+          {/* <TeamCardTwoContainer/> */}
+        </div>
         {/* <BorderEffectCard/> */}
         {/* <GlowBackground/> */}
         {/* <ScrollSpyNav/> */}
-        <BorderEffectButton/>
+        {/* <BorderEffectButton/> */}
         {/* <FeedbackCard */}
         {/*   rating={4} */}
         {/*   title="Excellent norwegian food!" */}
