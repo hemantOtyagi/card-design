@@ -211,3 +211,31 @@ body{
      @apply  absolute w-[calc(100%-2px)] h-[calc(100%-2px)] bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl left-[1px] top-[1px] ;
   }
 }
+
+@layer utilities {
+  /* Outer wrapper with animated gradient border */
+  .button-wrapper {
+    @apply relative rounded-2xl overflow-hidden 
+           bg-gradient-to-b from-slate-700 to-slate-800;
+  }
+
+  .button-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -75%; /* cleaner than top/left + size hacks */
+ background: conic-gradient(
+    theme(colors.white / 60%) 0deg,
+    theme(colors.white / 60%) 0deg,
+    transparent 80deg
+  );
+    animation: spin-gradient 6s linear infinite;
+    will-change: transform; /* smoother animation */
+  }
+
+  /* Inner layer for button content */
+  .button-content {
+    @apply absolute inset-[1px] rounded-2xl
+           bg-gradient-to-b from-slate-800 to-slate-900;
+    z-index: 1; /* ensure content is above the glow */
+  }
+}
