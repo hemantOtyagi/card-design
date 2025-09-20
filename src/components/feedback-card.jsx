@@ -21,7 +21,7 @@ const FeedbackCard = ({ rating, title, feedback, user, date, avatar }) => {
       </div>
 
       {/* Title */}
-      <h3 className="text-title-medium font-semibold text-on-surface mb-2">
+      <h3 className="text-title-medium font-semibold text-on-surface mb-3">
         {title}
       </h3>
 
