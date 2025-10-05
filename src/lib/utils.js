@@ -8,3 +8,13 @@ export function cn(...inputs) {
 export function formatINR(){
   return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format;
 }
+
+export const WEEK_DAYS = [
+  { label: "S", value: "sun" },
+  { label: "M", value: "mon" },
+  { label: "T", value: "tue" },
+  { label: "W", value: "wed" },
+  { label: "T", value: "thu" },
+  { label: "F", value: "fri" },
+  { label: "S", value: "sat" },
+];
