@@ -11,7 +11,7 @@ export default function DateTimePicker({
   setEndTime,
 }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-4 py-2">
       <label className="text-sm font-medium">Date</label>
       <input
         type="date"

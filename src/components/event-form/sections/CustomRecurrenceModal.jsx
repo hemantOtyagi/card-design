@@ -22,7 +22,7 @@ export default function CustomRecurrenceModal({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="w-94 rounded-2xl p-6">
+      <DialogContent className="w-94 rounded-2xl  gap-3">
         <DialogHeader>
           <DialogTitle className="text-2xl font-semibold">Custom recurrence</DialogTitle>
         </DialogHeader>

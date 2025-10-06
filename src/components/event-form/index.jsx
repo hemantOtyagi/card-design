@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { X, Clock, MapPin, AlignLeft, Calendar, Plus } from "lucide-react";
+import { X, Clock, MapPin, AlignLeft, Calendar, Plus , IndianRupee} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,6 +18,7 @@ function EventFormContent() {
   const [title, setTitle] = useState("");
   const [eventType, setEventType] = useState("Event");
   const [date, setDate] = useState("");
+  const [price, setPrice] = useState("");
   const [allDay, setAllDay] = useState(false);
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
@@ -31,6 +32,9 @@ function EventFormContent() {
   const [calendarName, setCalendarName] = useState("My Calendar");
   const [showLocation, setShowLocation] = useState(false);
   const [showDescription, setShowDescription] = useState(false);
+  const [showPrice, setShowPrice] = useState(false);
+  const [showBookingAmount, setShowBookingAmount] = useState(false);
+  const [bookingAmount, setSBookingAmount] = useState("");
   const [showDateTimePicker, setShowDateTimePicker] = useState(false);
 
   // Get current date and time for display
@@ -89,14 +93,16 @@ function EventFormContent() {
 
 
       {/* Date and Time Section */}
-      <div className="px-4 pb-4">
+      <div className=" px-4">
         {!showDateTimePicker ? (
           <button
             onClick={() => setShowDateTimePicker(true)}
             className="w-full text-left hover:bg-gray-50 rounded-lg p-3 transition-colors"
           >
-            <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-gray-600 mt-0.5" />
+            <div className="flex gap-3 ">
+              <div className="mt-1 ">
+                <Clock className="w-5 h-5 text-gray-600 mt-0.5" />
+              </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-gray-800 font-medium">
@@ -113,25 +119,25 @@ function EventFormContent() {
             </div>
           </button>
         ) : (
-          <div className="bg-gray-100 rounded-lg p-3">
-            <DateTimePicker
-              date={date}
-              setDate={setDate}
-              allDay={allDay}
-              setAllDay={setAllDay}
-              startTime={startTime}
-              setStartTime={setStartTime}
-              endTime={endTime}
-              setEndTime={setEndTime}
-            />
-            <button
-              onClick={() => setShowDateTimePicker(false)}
-              className="mt-2 text-sm text-blue-600 hover:underline"
-            >
-              Done
-            </button>
-          </div>
-        )}
+            <div className="bg-gray-100 rounded-lg px-3">
+              <DateTimePicker
+                date={date}
+                setDate={setDate}
+                allDay={allDay}
+                setAllDay={setAllDay}
+                startTime={startTime}
+                setStartTime={setStartTime}
+                endTime={endTime}
+                setEndTime={setEndTime}
+              />
+              <button
+                onClick={() => setShowDateTimePicker(false)}
+                className="mt-2 text-sm text-blue-600 hover:underline"
+              >
+                Done
+              </button>
+            </div>
+          )}
       </div>
 
       {/* Recurrence Section */}
@@ -148,6 +154,57 @@ function EventFormContent() {
         </div>
       )}
 
+
+      {/* Add Price Button or Input */}
+      {!showPrice ? (
+        <button 
+          onClick={() => setShowPrice(true)}
+          className="w-full px-4 py-3 flex items-center gap-3 hover:bg-primary text-left"
+        >
+          <IndianRupee className="w-5 h-5 text-gray-600" />
+          <span className="text-gray-700">Price</span>
+        </button>
+      ) : (
+          <div className="px-4 py-3 flex items-start gap-3 border-t border-b">
+            <IndianRupee className="w-5 h-5 text-gray-600 mt-1" />
+            <input
+              type="number"
+              placeholder="5000"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              className="flex-1 text-gray-800 placeholder-gray-400 border-none focus:outline-none"
+              autoFocus
+            />
+          </div>
+        )}
+
+
+
+      {/* Add Booking Amount Button or Input */}
+      {!showBookingAmount ? (
+        <button 
+          onClick={() => setShowBookingAmount(true)}
+          className="w-full px-4 py-3 flex items-center gap-3 hover:bg-primary text-left"
+        >
+          <IndianRupee className="w-5 h-5 text-gray-600" />
+          <span className="text-gray-700">Booking Amount</span>
+        </button>
+      ) : (
+          <div className="px-4 py-3 flex items-start gap-3 border-t border-b">
+            <IndianRupee className="w-5 h-5 text-gray-600 mt-1" />
+            <input
+              type="number"
+              placeholder="5000"
+              value={bookingAmount}
+              onChange={(e) => setSBookingAmount(e.target.value)}
+              className="flex-1 text-gray-800 placeholder-gray-400 border-none focus:outline-none"
+              autoFocus
+            />
+          </div>
+        )}
+
+
+
       {/* Add Location Button or Input */}
       {!showLocation ? (
         <button 
@@ -158,18 +215,18 @@ function EventFormContent() {
           <span className="text-gray-700">Add location</span>
         </button>
       ) : (
-        <div className="px-4 py-3 flex items-start gap-3 border-t border-b">
-          <MapPin className="w-5 h-5 text-gray-600 mt-1" />
-          <input
-            type="text"
-            placeholder="Add location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            className="flex-1 text-gray-800 placeholder-gray-400 border-none focus:outline-none"
-            autoFocus
-          />
-        </div>
-      )}
+          <div className="px-4 py-3 flex items-start gap-3 border-t border-b">
+            <MapPin className="w-5 h-5 text-gray-600 mt-1" />
+            <input
+              type="text"
+              placeholder="Add location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className="flex-1 text-gray-800 placeholder-gray-400 border-none focus:outline-none"
+              autoFocus
+            />
+          </div>
+        )}
 
       {/* Add Description Button or Textarea */}
       {!showDescription ? (
@@ -181,17 +238,17 @@ function EventFormContent() {
           <span className="text-gray-700">Add description</span>
         </button>
       ) : (
-        <div className="px-4 py-3 flex items-start gap-3 border-b">
-          <AlignLeft className="w-5 h-5 text-gray-600 mt-1" />
-          <textarea
-            placeholder="Add description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="flex-1 text-gray-800 placeholder-gray-400 border-none focus:outline-none resize-none min-h-[60px]"
-            autoFocus
-          />
-        </div>
-      )}
+          <div className="px-4 py-3 flex items-start gap-3 border-b">
+            <AlignLeft className="w-5 h-5 text-gray-600 mt-1" />
+            <textarea
+              placeholder="Add description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="flex-1 text-gray-800 placeholder-gray-400 border-none focus:outline-none resize-none min-h-[60px]"
+              autoFocus
+            />
+          </div>
+        )}
 
       {/* Calendar Selection */}
       <div className="px-4 py-3 flex items-center gap-3">
@@ -204,7 +261,6 @@ function EventFormContent() {
               onChange={(e) => setCalendarName(e.target.value)}
               className="font-medium text-gray-800 border-none focus:outline-none bg-transparent"
             />
-            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
           </div>
           <div className="text-xs text-gray-600">
             Busy • Default visibility • Notify 30 minutes before
@@ -214,10 +270,7 @@ function EventFormContent() {
 
       {/* Footer Buttons */}
       <div className="px-4 py-4 flex items-center justify-end gap-3 border-t sticky bottom-0 bg-white">
-        <button className="px-4 py-2 text-blue-600 font-medium hover:bg-blue-50 rounded">
-          More options
-        </button>
-        <Button className="px-6 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700">
+        <Button className="px-6 py-2 bg-primary rounded-lg text-white font-medium rounded hover:bg-blue-700">
           Save
         </Button>
       </div>
