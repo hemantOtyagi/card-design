@@ -2,6 +2,7 @@ import Card from "./components/animations/neumorphism-card"
 import CustomRecurrenceModal from "./components/batch"
 import EventForm from "./components/event-form"
 import PilgrimageCard from "./components/newCards/pilgrim-card"
+import PilgrimThreeCard from "./components/newCards/pilgrim-three-card"
 import PilgrimageTwoCard from "./components/newCards/pilgrim-two-card"
 import TextOnlyCard from "./components/newCards/text-only-card"
 import TextOnlyCardTwo from "./components/newCards/text-only-card-two"
@@ -17,10 +18,11 @@ const App = () => {
       {/* <EventForm/> */}
       {/* <PrompContainer/> */}
       {/* <PerplexityLayout/> */}
-      <PilgrimageCard/>
-      <PilgrimageTwoCard/>
-      <TextOnlyCard/>
-      <TextOnlyCardTwo/>
+      {/* <PilgrimageCard/> */}
+      {/* <PilgrimageTwoCard/> */}
+      {/* <TextOnlyCard/> */}
+      {/* <TextOnlyCardTwo/> */}
+      <PilgrimThreeCard/>
     </div>
   )
 }
