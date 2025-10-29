@@ -11,7 +11,7 @@ export default function PilgrimThreeCard() {
 
   return (
     <Card className="flex items-center justify-between max-w-xs mx-auto bg-[#1e1e1e] text-white rounded-2xl shadow-lg p-5 hover:bg-[#2a2a2a] transition-colors">
-      <div className="flex items-start gap-3">
+      <CardContent className="flex px-0 items-start gap-3">
         {/* Text Section */}
         <div className="flex flex-col gap-1 ">
           <span className="text-xs text-zinc-400">India Today</span>
@@ -35,7 +35,7 @@ export default function PilgrimThreeCard() {
             )}
           </p>
         </div>
-      </div>
+      </CardContent>
 
     </Card>
   );

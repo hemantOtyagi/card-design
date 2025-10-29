@@ -12,6 +12,7 @@ export default function TextOnlyCard() {
     <Card className="max-w-sm mx-auto bg-[#212121] text-white rounded-3xl shadow-lg overflow-hidden p-6 gap-2 transition-all hover:shadow-xl">
       {/* Card Header */}
       <CardHeader className="p-0 ">
+        <span className="text-xs text-zinc-400">{"Tripper trails"}</span>
         <h2 className="text-xl font-semibold text-white leading-snug">
           Kedarnath Pilgrimage: Divine Journey of Renewal
         </h2>
@@ -20,7 +21,10 @@ export default function TextOnlyCard() {
       {/* Card Content */}
       <CardContent className="p-0">
         <p className="text-sm text-zinc-300 leading-relaxed mb-4">
-          {expanded ? description : description.slice(0, 120) + (description.length > 120 ? "..." : "")}
+          {expanded
+            ? description
+            : description.slice(0, 120) +
+              (description.length > 120 ? "..." : "")}
           {description.length > 120 && (
             <button
               onClick={() => setExpanded(!expanded)}

@@ -1,14 +1,14 @@
-import Card from "./components/animations/neumorphism-card"
-import CustomRecurrenceModal from "./components/batch"
-import EventForm from "./components/event-form"
-import PilgrimageCard from "./components/newCards/pilgrim-card"
-import PilgrimThreeCard from "./components/newCards/pilgrim-three-card"
-import PilgrimageTwoCard from "./components/newCards/pilgrim-two-card"
-import TextOnlyCard from "./components/newCards/text-only-card"
-import TextOnlyCardTwo from "./components/newCards/text-only-card-two"
-import PrompContainer from "./components/promptbar/prompt-container"
-import PerplexityLayout from "./components/promptbar/search-layout"
-import SearchLayout from "./components/promptbar/search-layout"
+import Card from "./components/animations/neumorphism-card";
+import CustomRecurrenceModal from "./components/batch";
+import EventForm from "./components/event-form";
+import PilgrimageCard from "./components/newCards/pilgrim-card";
+import PilgrimThreeCard from "./components/newCards/pilgrim-three-card";
+import PilgrimageTwoCard from "./components/newCards/pilgrim-two-card";
+import TextOnlyCard from "./components/newCards/text-only-card";
+import TextOnlyCardTwo from "./components/newCards/text-only-card-two";
+import PrompContainer from "./components/promptbar/prompt-container";
+import PerplexityLayout from "./components/promptbar/search-layout";
+import SearchLayout from "./components/promptbar/search-layout";
 
 const App = () => {
   return (
@@ -18,13 +18,13 @@ const App = () => {
       {/* <EventForm/> */}
       {/* <PrompContainer/> */}
       {/* <PerplexityLayout/> */}
-      {/* <PilgrimageCard/> */}
-      {/* <PilgrimageTwoCard/> */}
+      <PilgrimageCard />
+      {/* <PilgrimageTwoCard /> */}
       {/* <TextOnlyCard/> */}
       {/* <TextOnlyCardTwo/> */}
-      <PilgrimThreeCard/>
+      {/* <PilgrimThreeCard/> */}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
