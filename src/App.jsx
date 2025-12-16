@@ -7,6 +7,7 @@ import PilgrimageTwoCard from "./components/newCards/pilgrim-two-card";
 import TextOnlyCard from "./components/newCards/text-only-card";
 import TextOnlyCardTwo from "./components/newCards/text-only-card-two";
 import OccupancyPricingWidget from "./components/occupancy-price";
+import Portfolio from "./components/portfolio/aryan_portfolio (1)";
 import PrompContainer from "./components/promptbar/prompt-container";
 import PerplexityLayout from "./components/promptbar/search-layout";
 import SearchLayout from "./components/promptbar/search-layout";
@@ -14,7 +15,7 @@ import BookingSidebar from "./components/test/booking-sidebar";
 
 const App = () => {
   return (
-    <div className="h-screen min-w-5xl flex justify-center items-center bg-white">
+    <div className="">
       {/* <Card/> */}
       {/* <CustomRecurrenceModal/> */}
       {/* <EventForm/> */}
@@ -22,7 +23,8 @@ const App = () => {
       {/* <PerplexityLayout/> */}
       {/* <PilgrimageCard /> */}
       {/* <BookingSidebar /> */}
-      <OccupancyPricingWidget />
+      {/* <OccupancyPricingWidget /> */}
+      <Portfolio/>
       {/* <PilgrimageTwoCard /> */}
       {/* <TextOnlyCard/> */}
       {/* <TextOnlyCardTwo/> */}
